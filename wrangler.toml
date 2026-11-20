@@ -1,10 +1,11 @@
 name = "cloudstorage"
-main = "./src/index.mjs"
-compatibility_date = "2022-09-08"
+main = "src/index.js"
+compatibility_date = "2026-11-21"
 
-[durable_objects]
-bindings = [{name = "COUNTER", class_name = "Counter"}]
+[[durable_objects.bindings]]
+name = "MYCLOUD_DO"
+class_name = "MyCloudRelay"
 
 [[migrations]]
-tag = "v1" # Should be unique for each entry
-new_classes = ["Counter"]
+tag = "v1"
+new_sqlite_classes = ["MyCloudRelay"]
